@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+
+<script>
+  function checkAndHideWatermark() {
+      var widget = document.querySelector('#chainlit-copilot');
+      var shadowRoot = widget && widget.shadowRoot;
+      var watermarkDiv = shadowRoot && shadowRoot.querySelector('div.watermark');
+      if (watermarkDiv) {
+          watermarkDiv.style.display = 'none';
+      }
+      setTimeout(checkAndHideWatermark, 100);
+  }
+  checkAndHideWatermark();
+</script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
